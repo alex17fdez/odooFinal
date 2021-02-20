@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+	<act_window id="action_my_kanban" name="My Kanban Board" res_model="my.task" view_mode="kanban,tree,form" />
+	<!-- Menu item to open To-do Kanban Board -->
+	<menuitem id="menu_my_kanban" name="My Kanban Board" parent="my_app.l1_menu_my_task" sequence="30" action="action_my_kanban" />
+	<record id="To-Do Task Kanban" model="ir.ui.view">
+		<field name="name">My Tasks Kanban</field>
+		<field name="model">my.task</field>
+		<field name="arch" type="xml">
+			<kanban default_group_by="kanban_state" default_order="dia" quick_create="false">
+				<templates>
+					<t t-name="kanban-box">
+						<div class="oe_kanban_card">
+							<div class="oe_kanban_content">
+								<h4>
+									<a type="open">
+									Numero de Pedido:
+										<field name="idPedido" />
+									</a>
+								</h4>
+								<ul>
+									<li>
+									Empleado:
+										<field name="nombreEmpleado" />
+									</li>
+									<li>
+									Mesa:
+										<field name="numeroMesa" />
+									</li>
+									<li>
+									Bebida:
+										<field name="bebida" />
+									</li>
+									 <li>
+									 Plato:
+										<field name="plato" />
+									</li>
+                                    <li>
+									Precio:
+										<field name="precio" />
+									</li>
+                                    <li>
+									Dia:
+										<field name="dia" />
+									</li>
+                                    <li>
+									Hora:
+										<field name="hora" />
+									</li>
+                                    <li>
+									Turno:
+										<field name="tipo_turno" />
+									</li>
+
+								</ul>
+								<div class="oe_kanban_bottom_right">
+									<field name="kanban_state" widget="kanban_state_selection" />
+								</div>
+								<div class="oe_kanban_footer_left">
+									<field name="priority" widget="priority" />
+								</div>
+							</div>
+						</div>
+					</t>
+				</templates>
+			</kanban>
+		</field>
+	</record>
+</odoo>

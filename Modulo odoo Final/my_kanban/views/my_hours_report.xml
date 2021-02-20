@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+ <template id = "report_task_hours" >
+ <t t-call = "web.html_container" >
+ <t t-foreach = "docs" t-as = "o" >
+ <t t-call = "web.external_layout" >
+ <div class = "page" >
+
+<style>
+.padre {
+  background: #9FDED6;
+  height: 100%;
+  /*IMPORTANTE*/
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding:50px;
+}
+
+.hijo {
+  margin-left: 25%;
+  background: #fff;
+  width: 50%;
+  padding:40px;
+}
+h1{
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+</style>
+<div class="padre">
+<div class="hijo">
+    <h1> Pedido <span t-field = "o.idPedido" /></h1>
+    <h4> Nombre Empleado: <span t-field = "o.nombreEmpleado" /> </h4>
+    <h4> Numero Mesa: <span t-field = "o.numeroMesa" /> </h4>
+    <h4> Bebida: <span t-field = "o.bebida" /> </h4>
+    <h4> Plato:  <span t-field = "o.plato" /> </h4>
+    <hr/>
+    <h4> Día: <span t-field = "o.dia" /> </h4>
+    <h4> Hora: <span t-field = "o.hora" />0 </h4>
+    <h4> Turno: <span t-field = "o.tipo_turno" /> </h4>
+    <hr/>
+    <h4> Precio:  <span t-field = "o.precio" /> </h4>
+</div>
+</div>
+
+ </div>
+ </t>
+ </t>
+ </t>
+ </template>
+</odoo>
